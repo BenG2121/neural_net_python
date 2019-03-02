@@ -2,15 +2,15 @@
 <project version="4">
   <component name="AutoTestManager">
     <enabled-run-configurations>
-      <run-configuration type="tests" name="Unittests for test_neuralNetwork.TestNeuralNetworkAPI" />
-      <run-configuration type="tests" name="Unittests for test_neuralNetwork.TestNeuralNetwork" />
+      <run-configuration type="tests" name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" />
     </enabled-run-configurations>
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/test_neuralNetwork.py" line="108" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0afd836d-9bd6-4bc0-8a37-28fcc8a65ec1" name="Default" comment="" />
+    <list default="true" id="0afd836d-9bd6-4bc0-8a37-28fcc8a65ec1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/neuronalnet.iml" afterPath="$PROJECT_DIR$/.idea/neuronalnet.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/neuronalnets.py" afterPath="$PROJECT_DIR$/src/neuronalnets.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="neuronalnets.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/neuronalnets.py">
+      <file leaf-file-name="neuronalnets.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/neuronalnets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2312">
-              <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="41" />
+            <state relative-caret-position="1464">
+              <caret line="96" column="6" lean-forward="true" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -35,21 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="builtins.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1410712547/builtins.py">
+      <file leaf-file-name="test_neuralNetwork.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unittest/test_neuralNetwork.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12223">
-              <caret line="719" column="6" lean-forward="false" selection-start-line="719" selection-start-column="6" selection-end-line="719" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_neuralNetwork.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="92" column="42" lean-forward="false" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
+            <state relative-caret-position="357">
+              <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -59,6 +49,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>print_current_values</find>
@@ -66,22 +63,34 @@
       <find>set_array</find>
       <find>print</find>
       <find>upd</find>
+      <find>__</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/neuronalnets.py" />
         <option value="$PROJECT_DIR$/test_neuralNetwork.py" />
+        <option value="$PROJECT_DIR$/src/test_neuralNetwork.py" />
+        <option value="$PROJECT_DIR$/unittest/test_neuralNetwork.py" />
+        <option value="$PROJECT_DIR$/MulticastReceiver.py" />
+        <option value="$PROJECT_DIR$/MulticastSender2.py" />
+        <option value="$PROJECT_DIR$/MulticastSenderReceiver.py" />
+        <option value="$PROJECT_DIR$/MulticastSender.py" />
+        <option value="$PROJECT_DIR$/src/neuronalnets.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="502" />
-    <option name="y" value="-27" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1672" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -97,6 +106,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -106,26 +116,30 @@
             </path>
             <path>
               <item name="neuronalnet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="neuronalnet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="neuronalnet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neuronalnet" type="462c0819:PsiDirectoryNode" />
+              <item name="unittest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="neuronalnet" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="neuronalnet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Benjamin\PycharmProjects\neuronalnet\unittest" />
+      <recent name="C:\Users\Benjamin\PycharmProjects\neuronalnet\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -139,8 +153,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_neuralNetwork.TestNeuralNetworkInit">
-    <configuration name="neuronalnets" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python tests.Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate">
+    <configuration name="MulticastReceiver" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -152,46 +166,72 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="neuronalnet" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/neuronalnets.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MulticastReceiver.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Unittests for test_neuralNetwork.TestNeuralNetwork" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="MulticastSender (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="neuronalnet" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_neuralNetwork.TestNeuralNetwork&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MulticastSender.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkAPI" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="MulticastSender" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="neuronalnet" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_neuralNetwork.TestNeuralNetworkAPI&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="C:\Users\Benjamin\PycharmProjects\neuronalnet\MulticastSenderReceiver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="MulticastSender2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="neuronalnet" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MulticastSender2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unittest" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -200,34 +240,34 @@
       <option name="_new_target" value="&quot;test_neuralNetwork.TestNeuralNetworkInit&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
-    <configuration name="Unittests for test_neuralNetwork.TestNeuralNetwork.test_instance_creation_invalid_values" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unittest" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="neuronalnet" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_neuralNetwork.TestNeuralNetwork.test_instance_creation_invalid_values&quot;" />
+      <option name="_new_target" value="&quot;test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetwork.test_instance_creation_invalid_values" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetwork" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetworkAPI" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetworkInit" />
-      <item index="4" class="java.lang.String" itemvalue="Python.neuronalnets" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetworkInit" />
+      <item index="1" class="java.lang.String" itemvalue="Python.MulticastSender" />
+      <item index="2" class="java.lang.String" itemvalue="Python.MulticastReceiver" />
+      <item index="3" class="java.lang.String" itemvalue="Python.MulticastSender2" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetworkInit" />
-        <item index="1" class="java.lang.String" itemvalue="Python.neuronalnets" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetworkAPI" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetwork" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetwork.test_instance_creation_invalid_values" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" />
+        <item index="1" class="java.lang.String" itemvalue="Python.MulticastSender2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.MulticastReceiver" />
+        <item index="3" class="java.lang.String" itemvalue="Python.MulticastSender" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test_neuralNetwork.TestNeuralNetworkInit" />
       </list>
     </recent_temporary>
   </component>
@@ -248,35 +288,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit - 2018.05.10 at 17h 08m 05s.xml">
-      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" configurationId="tests" />
+    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit_test_instance_creation_invalid_learning_rate - 2019.03.02 at 08h 42m 13s.xml">
+      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit - 2018.05.10 at 17h 09m 39s.xml">
-      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" configurationId="tests" />
+    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit_test_instance_creation_invalid_learning_rate - 2019.03.02 at 08h 42m 17s.xml">
+      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit - 2018.05.10 at 17h 10m 14s.xml">
-      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" configurationId="tests" />
+    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit_test_instance_creation_invalid_learning_rate - 2019.03.02 at 08h 42m 21s.xml">
+      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit - 2018.05.10 at 17h 11m 57s.xml">
-      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" configurationId="tests" />
+    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit_test_instance_creation_invalid_learning_rate - 2019.03.02 at 08h 42m 33s.xml">
+      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit - 2018.05.10 at 17h 12m 16s.xml">
-      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" configurationId="tests" />
+    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit_test_instance_creation_invalid_learning_rate - 2019.03.02 at 08h 42m 47s.xml">
+      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit - 2018.05.10 at 17h 14m 22s.xml">
-      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" configurationId="tests" />
+    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit_test_instance_creation_invalid_learning_rate - 2019.03.02 at 08h 42m 50s.xml">
+      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit - 2018.05.10 at 17h 15m 04s.xml">
-      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" configurationId="tests" />
+    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit_test_instance_creation_invalid_learning_rate - 2019.03.02 at 08h 42m 55s.xml">
+      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit - 2018.05.10 at 17h 15m 13s.xml">
-      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" configurationId="tests" />
+    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit_test_instance_creation_invalid_learning_rate - 2019.03.02 at 08h 43m 26s.xml">
+      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit - 2018.05.10 at 17h 15m 42s.xml">
-      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" configurationId="tests" />
+    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit_test_instance_creation_invalid_learning_rate - 2019.03.02 at 08h 43m 33s.xml">
+      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit - 2018.05.10 at 17h 16m 57s.xml">
-      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit" configurationId="tests" />
+    <history-entry file="Unittests_for_test_neuralNetwork_TestNeuralNetworkInit_test_instance_creation_invalid_learning_rate - 2019.03.02 at 08h 43m 54s.xml">
+      <configuration name="Unittests for test_neuralNetwork.TestNeuralNetworkInit.test_instance_creation_invalid_learning_rate" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -289,18 +329,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17913593" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15384616" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24920969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2541106" sideWeight="0.50653595" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2541106" sideWeight="0.50653595" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -316,17 +357,17 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32683983" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17913593" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15384616" sideWeight="0.49346405" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24920969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2541106" sideWeight="0.50653595" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2541106" sideWeight="0.50653595" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -339,55 +380,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/neuronalnets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1410712547/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12223">
-          <caret line="719" column="6" lean-forward="false" selection-start-line="719" selection-start-column="6" selection-end-line="719" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="92" column="42" lean-forward="false" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neuronalnets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neuronalnets.py">
+    <entry file="file://$PROJECT_DIR$/src/neuronalnets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -397,16 +390,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1410712547/_socket.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="33" />
+        <state relative-caret-position="10540">
+          <caret line="620" column="8" lean-forward="false" selection-start-line="620" selection-start-column="8" selection-end-line="620" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unittest/test_neuralNetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="24" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/neuronalnets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unittest/test_neuralNetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neuronalnets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unittest/test_neuralNetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neuronalnets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unittest/test_neuralNetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="29" lean-forward="true" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1410712547/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuronalnets.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1410712547/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12223">
+          <caret line="719" column="6" lean-forward="false" selection-start-line="719" selection-start-column="6" selection-end-line="719" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py" />
+    <entry file="file://$PROJECT_DIR$/neuronalnets.py" />
+    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py" />
+    <entry file="file://$PROJECT_DIR$/neuronalnets.py" />
+    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/numpy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -418,34 +499,83 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-160">
           <caret line="340" column="6" lean-forward="false" selection-start-line="340" selection-start-column="6" selection-end-line="340" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/neuronalnets.py" />
+    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1410712547/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="773" column="49" lean-forward="false" selection-start-line="773" selection-start-column="49" selection-end-line="773" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuronalnets.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1410712547/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12223">
           <caret line="719" column="6" lean-forward="false" selection-start-line="719" selection-start-column="6" selection-end-line="719" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py" />
+    <entry file="file://$PROJECT_DIR$/neuronalnets.py" />
+    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py" />
+    <entry file="file://$PROJECT_DIR$/neuronalnets.py" />
+    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/numpy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="149" column="21" lean-forward="true" selection-start-line="149" selection-start-column="21" selection-end-line="149" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <caret line="340" column="6" lean-forward="false" selection-start-line="340" selection-start-column="6" selection-end-line="340" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuronalnets.py" />
+    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py" />
+    <entry file="file://$PROJECT_DIR$/MulticastSenderReceiver.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1410712547/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="2444" column="8" lean-forward="false" selection-start-line="2444" selection-start-column="8" selection-end-line="2444" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neuronalnets.py">
+    <entry file="file://$PROJECT_DIR$/MulticastReceiver.py" />
+    <entry file="file://$PROJECT_DIR$/MulticastSender2.py" />
+    <entry file="file://$PROJECT_DIR$/MulticastSender.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1410712547/_socket.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="41" />
+        <state relative-caret-position="171">
+          <caret line="620" column="8" lean-forward="false" selection-start-line="620" selection-start-column="8" selection-end-line="620" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unittest/test_neuralNetwork.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_neuralNetwork.py">
+    <entry file="file://$PROJECT_DIR$/src/neuronalnets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="92" column="42" lean-forward="false" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
+        <state relative-caret-position="1464">
+          <caret line="96" column="6" lean-forward="true" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
