@@ -3,84 +3,80 @@ import math
 import scipy.special
 
 class NeuralNetwork:
-    def __init__(self,input_list):
+    def __init__(self,input_list: list):
         inodes = input_list[0]
         hnodes = input_list[1]
         onodes = input_list[2]
         learning_rate = input_list[3]
 
         self.v_test = None
-        self.__w_hnou = None
-        self.__w_inhn = None
-        self.__v_in = None
-        self.__v_hn = None
-        self.__v_ou = None
+        self.w_hnou = None
+        self.w_inhn = None
+        self.v_in = None
+        self.v_hn = None
+        self.v_ou = None
         self.activation_function = numpy.vectorize(self.__activation_function)
 
-        if isinstance(inodes,int) and inodes > 0:
-            self.__inodes = inodes
-        else:
-            self.__inodes = None
-
-        if isinstance(hnodes, int) and  hnodes > 0:
-             self.__hnodes = hnodes
-        else:
-            self.__hnodes = None
-
-        if isinstance(onodes, int) and onodes > 0:
-            self.__onodes = onodes
-        else:
-            self.__onodes = None
-
-        if isinstance(learning_rate, float) and learning_rate > 0 and learning_rate < 1:
-            self.__learning_rate = learning_rate
-        else:
-            self.__learning_rate = None
+        self.inodes = self.isvalidnode(inodes)
+        self.hnodes = self.isvalidnode(hnodes)
+        self.onodes = self.isvalidnode(onodes)
+        self.learning_rate = self.isvalidrate(learning_rate)
 
     def __activation_function(self,x):
         return 1 / (1 + math.exp(-x))
 
+    @staticmethod
+    def isvalidnode(par):
+        if isinstance(par, int) and par > 0:
+            return par
+        else:
+            return None
 
-
+    @staticmethod
+    def isvalidrate(par):
+        if isinstance(par, float) and par > 0 and par < 1:
+            return par
+        else:
+            return None
 
     def getNumberOfXNodes(self, node_type):
         if node_type == "inodes":
-            return self.__inodes
+            return self.inodes
         elif node_type == "hnodes":
-            return self.__hnodes
+            return self.hnodes
         elif node_type == "onodes":
-            return self.__onodes
+            return self.onodes
         else:
             return None
 
     def getLearningRate(self):
-        return self.__learning_rate
+        return self.learning_rate
 
     #w_inhn = hn*in
     #w_hnou = ou*hn
     def init_w_input_hidden(self):
-        self.__w_inhn = numpy.random.rand(self.__hnodes, self.__inodes) - 0.5
-        return self.__w_inhn
+        self.w_inhn = numpy.random.rand(self.hnodes, self.inodes) - 0.5
+        return self.w_inhn
 
     def get_w_input_hidden(self):
-        return self.__w_inhn
+        return self.w_inhn
 
     def set_w_input_hidden(self, array):
-        if array.shape == self.__w_inhn.shape:
-            self.__w_inhn = array
+        if array.shape == self.w_inhn.shape:
+            self.w_inhn = array
         else:
             print("Dimensions do not match")
 
     def init_w_hidden_output(self):
-        self.__w_hnou = numpy.random.rand(self.__onodes, self.__hnodes) - 0.5
-        return self.__w_hnou
+        self.w_hnou = numpy.random.rand(self.onodes, self.hnodes) - 0.5
+        return self.w_hnou
 
     def get_w_hidden_output(self):
-        return self.__w_hnou
+        return self.w_hnou
 
     def init_v_in(self):
-        self.__v_in = numpy.random.rand(self.__inodes,1)*10
-        return self.__v_in
+        self.v_in = numpy.random.rand(self.inodes,1)*10
+        return self.v_in
 
     def set_array(self, v1,v2):
         try:
@@ -95,29 +91,29 @@ class NeuralNetwork:
 
 
     def get_v_in(self):
-        return self.__v_in
+        return self.v_in
 
     def init_v_hn(self,):
-        self.__v_hn = numpy.zeros((self.__hnodes,1))
-        return self.__v_hn
+        self.v_hn = numpy.zeros((self.hnodes,1))
+        return self.v_hn
 
     def get_v_hn(self):
-        return self.__v_hn
+        return self.v_hn
 
     def init_v_ou(self):
-        self.__v_ou = numpy.zeros((self.__onodes,1))
-        return self.__v_ou
+        self.v_ou = numpy.zeros((self.onodes,1))
+        return self.v_ou
 
     def get_v_ou(self):
-        return self.__v_ou
+        return self.v_ou
 
     def print_current_values(self, prefix=""):
-        print("{}v_in=\n{}\n".format(prefix,self.__v_in))
-        print("{}v_hn=\n{}\n".format(prefix,self.__v_hn))
-        print("{}v_ou=\n{}\n".format(prefix,self.__v_ou))
+        print("{}v_in=\n{}\n".format(prefix,self.v_in))
+        print("{}v_hn=\n{}\n".format(prefix,self.v_hn))
+        print("{}v_ou=\n{}\n".format(prefix,self.v_ou))
 
-        print("{}w_input_hidden=\n{}\n".format(prefix,self.__w_inhn))
-        print("{}w_hidden_output=\n{}\n".format(prefix,self.__w_hnou))
+        print("{}w_input_hidden=\n{}\n".format(prefix,self.w_inhn))
+        print("{}w_hidden_output=\n{}\n".format(prefix,self.w_hnou))
 
     def init_neural_network(self):
         self.init_w_input_hidden()
@@ -127,7 +123,7 @@ class NeuralNetwork:
         self.init_v_ou()
 
     def update_neural_network(self):
-        h_in = numpy.around(self.__w_inhn.dot(self.__v_in),3)
+        h_in = numpy.around(self.w_inhn.dot(self.v_in),3)
         h_out = numpy.around(self.activation_function(h_in),3)
         o_in = numpy.around(self.__w_hnou.dot(h_out),3)
         o_out = numpy.around(self.activation_function(o_in),3)
