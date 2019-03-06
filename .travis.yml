@@ -8,5 +8,8 @@ install:
 # command to run tests
 script:
   - cd unittest
-  - python -m unittest test_neuralNetwork.py
-  - python -m unittest test_neuralNetwork.TestNeuralNetworkInit.test_update_neural_network_against_values
+  - python -m coverage run test_neuralNetwork.py
+after_success:
+  # display coverage results (-m: with missing lines)
+  - python -m coverage report -m ../src/neuronalnets.py test_neuralNetwork.py
+  - coveralls
