@@ -1,6 +1,5 @@
 import numpy
 import math
-import scipy.special
 
 class NeuralNetwork:
     def __init__(self,input_list: list):
@@ -125,7 +124,7 @@ class NeuralNetwork:
     def update_neural_network(self):
         h_in = numpy.around(self.w_inhn.dot(self.v_in),3)
         h_out = numpy.around(self.activation_function(h_in),3)
-        o_in = numpy.around(self.__w_hnou.dot(h_out),3)
+        o_in = numpy.around(self.w_hnou.dot(h_out),3)
         o_out = numpy.around(self.activation_function(o_in),3)
         return o_out
 
