@@ -8,5 +8,6 @@ install:
   - pip install -r requirements.txt
 # command to run tests
 script:
-  - python -m unittest unittest/test_neuralNetwork.py
+  - cd unittest
+  - python -m unittest test_neuralNetwork.py
   - python -m unittest test_neuralNetwork.TestNeuralNetworkInit.test_update_neural_network_against_values
