@@ -1,6 +1,5 @@
 import numpy
 import math
-import scipy.special
 
 class NeuralNetwork:
     def __init__(self,input_list: list):

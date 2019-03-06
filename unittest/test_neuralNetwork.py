@@ -1,6 +1,9 @@
 import unittest
-from neuronalnets import NeuralNetwork
 import numpy
+import sys
+
+sys.path.append('../src')
+from neuronalnets import NeuralNetwork
 
 class TestNeuralNetworkInit(unittest.TestCase):
     def test_instance_creation_valid_params(self):
