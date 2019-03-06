@@ -1,3 +1,4 @@
 # Functionality
 numpy
 # Testing
+coveralls
