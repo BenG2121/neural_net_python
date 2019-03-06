@@ -11,5 +11,5 @@ script:
   - python -m coverage run test_neuralNetwork.py
 after_success:
   # display coverage results (-m: with missing lines)
-  - python -m coverage report -m
+  - python -m coverage report -m neuronalnets.py test_neuralNetwork.py
   - coveralls
