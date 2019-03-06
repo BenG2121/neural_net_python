@@ -8,8 +8,8 @@ install:
 # command to run tests
 script:
   - cd unittest
-  - python -m coverage run test_neuralNetwork.py unittest
+  - python -m coverage run test_neuralNetwork.py
 after_success:
   # display coverage results (-m: with missing lines)
-  - python -m coverage report -m ../src/neuronalnets.py test_neuralNetwork.py
+  - python -m coverage report
   - coveralls
