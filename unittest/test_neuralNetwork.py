@@ -10,20 +10,20 @@ class TestNeuralNetworkInit(unittest.TestCase):
         test_input = [6,5,4,0.4]
 
         myNeuralNetwork = NeuralNetwork(test_input)
-        self.assertEqual(test_input[0], myNeuralNetwork.getNumberOfXNodes("inodes"))
-        self.assertEqual(test_input[1], myNeuralNetwork.getNumberOfXNodes("hnodes"))
-        self.assertEqual(test_input[2], myNeuralNetwork.getNumberOfXNodes("onodes"))
-        self.assertEqual(test_input[3], myNeuralNetwork.getLearningRate())
+        self.assertEqual(test_input[0], myNeuralNetwork.get_number_of_inodes())
+        self.assertEqual(test_input[1], myNeuralNetwork.get_number_of_hnodes())
+        self.assertEqual(test_input[2], myNeuralNetwork.get_number_of_onodes())
+        self.assertEqual(test_input[3], myNeuralNetwork.get_learning_rate())
 
     def test_instance_creation_invalid_params(self):
         test_invalid_input = [-3, 0, "-3","3","test", 0.1]
         test_learning_rate = 0.4
         for ele in test_invalid_input:
             myNeuralNetwork = NeuralNetwork([ele,ele,ele,test_learning_rate])
-            self.assertEqual(None, myNeuralNetwork.getNumberOfXNodes("inodes"))
-            self.assertEqual(None, myNeuralNetwork.getNumberOfXNodes("hnodes"))
-            self.assertEqual(None, myNeuralNetwork.getNumberOfXNodes("onodes"))
-            self.assertEqual(None, myNeuralNetwork.getNumberOfXNodes("onodes"))
+            self.assertEqual(None, myNeuralNetwork.get_number_of_inodes())
+            self.assertEqual(None, myNeuralNetwork.get_number_of_hnodes())
+            self.assertEqual(None, myNeuralNetwork.get_number_of_onodes())
+            self.assertEqual(test_learning_rate, myNeuralNetwork.get_learning_rate())
 
     def test_instance_creation_invalid_learning_rate(self):
         test_inodes = 6
@@ -32,14 +32,7 @@ class TestNeuralNetworkInit(unittest.TestCase):
         test_learning_rate = [-1, 0, 1, 3, "-3","3","test"]
         for ele in test_learning_rate:
             myNeuralNetwork = NeuralNetwork([test_inodes,test_hnodes,test_onodes,ele])
-            self.assertEqual(None, myNeuralNetwork.getLearningRate())
-
-    def test_invalid_getter_input(self):
-        wrong_getter_input = ["abc", -1, None, 0]
-
-        for ele in wrong_getter_input:
-            myNeuralNetwork = NeuralNetwork([3, 4, 5, ele])
-            self.assertEqual(None, myNeuralNetwork.getNumberOfXNodes(ele))
+            self.assertEqual(None, myNeuralNetwork.get_learning_rate())
 
     def test_create_w_apis(self):
         test_input = [6,5,4,0.4]
