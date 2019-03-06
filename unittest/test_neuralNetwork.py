@@ -1,8 +1,8 @@
-from unittest import TestCase
+import unittest
 from neuronalnets import NeuralNetwork
 import numpy
 
-class TestNeuralNetworkInit(TestCase):
+class TestNeuralNetworkInit(unittest.TestCase):
     def test_instance_creation_valid_params(self):
         test_input = [6,5,4,0.4]
 
@@ -117,3 +117,5 @@ class TestNeuralNetworkInit(TestCase):
         for n in range(0,expected_output_array.shape[0]):
             for m in range(0,expected_output_array.shape[1]):
                 self.assertTrue(expected_output_array[n,m] == output[n,m],msg="output value is not equal as expected!".format(expected_output,output))
+if __name__ == '__main__':
+    unittest.main()
