@@ -1,4 +1,4 @@
 # Functionality
 numpy
 # Testing
-coveralls
+python-coveralls
