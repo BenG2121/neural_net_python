@@ -9,4 +9,4 @@ install:
 # command to run tests
 script:
   - cd unittest/
-  - test_neuralNetwork
+  - python test_neuralNetwork.py
