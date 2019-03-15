@@ -5,9 +5,9 @@ class NeuralNetwork:
     def __init__(self,input_list: list):
         self.activation_function = numpy.vectorize(self.__activation_function)
 
-        self.inodes = self.isvalidnode(input_list[0])
-        self.hnodes = self.isvalidnode(input_list[1])
-        self.onodes = self.isvalidnode(input_list[2])
+        self.inputnodes = self.isvalidnode(input_list[0])
+        self.hiddennodes = self.isvalidnode(input_list[1])
+        self.outputnodes = self.isvalidnode(input_list[2])
         self.learning_rate = self.isvalidrate(input_list[3])
 
     def __activation_function(self,x):
@@ -27,75 +27,75 @@ class NeuralNetwork:
         else:
             return None
 
-    def get_number_of_inodes(self):
-        return self.inodes
+    def get_number_of_inputnodes(self):
+        return self.inputnodes
 
-    def get_number_of_hnodes(self):
-        return self.hnodes
+    def get_number_of_hiddennodes(self):
+        return self.hiddennodes
 
-    def get_number_of_onodes(self):
-        return self.onodes
+    def get_number_of_outputnodes(self):
+        return self.outputnodes
 
     def get_learning_rate(self):
         return self.learning_rate
 
-    def get_w_input_hidden(self):
-        return self.w_inhn
+    def get_weight_input_hidden(self):
+        return self.weight_input_hidden
 
-    def get_w_hidden_output(self):
-        return self.w_hnou
+    def get_weight_hidden_output(self):
+        return self.weight_hidden_output
 
-    def get_v_in(self):
-        return self.v_in
+    def get_input_vector(self):
+        return self.input_vector
 
-    def get_v_hn(self):
-        return self.v_hn
+    def get_hidden_vector(self):
+        return self.hidden_vector
 
-    def get_v_ou(self):
-        return self.v_ou
+    def get_output_vector(self):
+        return self.output_vector
 
-    def init_v_in(self):
-        self.v_in = numpy.random.rand(self.inodes,1)*10
-        return self.v_in
+    def init_input_vector(self):
+        self.input_vector = numpy.random.rand(self.inputnodes,1)*10
+        return self.input_vector
 
-    #w_inhn = hn*in
-    #w_hnou = ou*hn
-    def init_w_input_hidden(self):
-        self.w_inhn = numpy.random.rand(self.hnodes, self.inodes) - 0.5
-        return self.w_inhn
+    #weight_input_hidden = hn*in
+    #weight_hidden_output = ou*hn
+    def init_weight_input_hidden(self):
+        self.weight_input_hidden = numpy.random.rand(self.hiddennodes, self.inputnodes) - 0.5
+        return self.weight_input_hidden
 
-    def init_w_hidden_output(self):
-        self.w_hnou = numpy.random.rand(self.onodes, self.hnodes) - 0.5
-        return self.w_hnou
+    def init_weight_hidden_output(self):
+        self.weight_hidden_output = numpy.random.rand(self.outputnodes, self.hiddennodes) - 0.5
+        return self.weight_hidden_output
 
 
-    def set_w_input_hidden(self, array):
-        if array.shape == self.w_inhn.shape:
-            self.w_inhn = array
+    def set_weight_input_hidden(self, array):
+        if array.shape == self.weight_input_hidden.shape:
+            self.weight_input_hidden = array
         else:
             print("Dimensions do not match")
 
-    def init_v_hn(self,):
-        self.v_hn = numpy.zeros((self.hnodes,1))
-        return self.v_hn
+    def init_hidden_vector(self,):
+        self.hidden_vector = numpy.zeros((self.hiddennodes,1))
+        return self.hidden_vector
 
-    def init_v_ou(self):
-        self.v_ou = numpy.zeros((self.onodes,1))
-        return self.v_ou
+    def init_output_vector(self):
+        self.output_vector = numpy.zeros((self.outputnodes,1))
+        return self.output_vector
 
     def init_neural_network(self):
-        self.init_w_input_hidden()
-        self.init_w_hidden_output()
-        self.init_v_in()
-        self.init_v_hn()
-        self.init_v_ou()
+        self.init_weight_input_hidden()
+        self.init_weight_hidden_output()
+        self.init_input_vector()
+        self.init_hidden_vector()
+        self.init_output_vector()
 
     def update_neural_network(self):
-        h_in = numpy.around(self.w_inhn.dot(self.v_in),3)
-        h_out = numpy.around(self.activation_function(h_in),3)
-        o_in = numpy.around(self.w_hnou.dot(h_out),3)
-        o_out = numpy.around(self.activation_function(o_in),3)
-        return o_out
+        hidden_in = numpy.around(self.weight_input_hidden.dot(self.input_vector),3)
+        hidden_out = numpy.around(self.activation_function(hidden_in),3)
+        output_in = numpy.around(self.weight_hidden_output.dot(hidden_out),3)
+        output_out = numpy.around(self.activation_function(output_in),3)
+        return output_out
 
     def set_array(self, v1,v2):
         try:
@@ -109,27 +109,27 @@ class NeuralNetwork:
             print("Dimensions dont match")
 
     def print_current_values(self, prefix=""):
-        print("{}v_in=\n{}\n".format(prefix,self.v_in))
-        print("{}v_hn=\n{}\n".format(prefix,self.v_hn))
-        print("{}v_ou=\n{}\n".format(prefix,self.v_ou))
+        print("{}input_vector=\n{}\n".format(prefix,self.input_vector))
+        print("{}hidden_vector=\n{}\n".format(prefix,self.hidden_vector))
+        print("{}output_vector=\n{}\n".format(prefix,self.output_vector))
 
-        print("{}w_input_hidden=\n{}\n".format(prefix,self.w_inhn))
-        print("{}w_hidden_output=\n{}\n".format(prefix,self.w_hnou))
+        print("{}weight_input_hidden=\n{}\n".format(prefix,self.weight_input_hidden))
+        print("{}weight_hidden_output=\n{}\n".format(prefix,self.weight_hidden_output))
 
 if __name__ == "__main__":
     input = [3, 3, 3, 0.3]
     myNeuralNetwork = NeuralNetwork(input)
     myNeuralNetwork.init_neural_network()
 
-    defaul_v_in_list = [0.9,0.1,0.8]
-    default_v_in = numpy.array(defaul_v_in_list).reshape(len(defaul_v_in_list), 1)
-    myNeuralNetwork.set_array(myNeuralNetwork.get_v_in(),default_v_in)
+    default_input_vector_list = [0.9,0.1,0.8]
+    default_input_vector = numpy.array(default_input_vector_list).reshape(len(default_input_vector_list), 1)
+    myNeuralNetwork.set_array(myNeuralNetwork.get_input_vector(),default_input_vector)
 
-    default_w_inhn = numpy.array([[0.9,0.3,0.4],[0.2,0.8,0.2],[0.1,0.5,0.6]])
-    myNeuralNetwork.set_array(myNeuralNetwork.get_w_input_hidden(),default_w_inhn)
+    default_weight_input_hidden = numpy.array([[0.9,0.3,0.4],[0.2,0.8,0.2],[0.1,0.5,0.6]])
+    myNeuralNetwork.set_array(myNeuralNetwork.get_weight_input_hidden(),default_weight_input_hidden)
 
-    default_w_hnou = numpy.array([[0.3, 0.7, 0.5], [0.6, 0.5, 0.2], [0.8, 0.1, 0.9]])
-    myNeuralNetwork.set_array(myNeuralNetwork.get_w_hidden_output(), default_w_hnou)
+    default_weight_hidden_output = numpy.array([[0.3, 0.7, 0.5], [0.6, 0.5, 0.2], [0.8, 0.1, 0.9]])
+    myNeuralNetwork.set_array(myNeuralNetwork.get_weight_hidden_output(), default_weight_hidden_output)
 
     #myNeuralNetwork.print_current_values("__main__")
     output = myNeuralNetwork.update_neural_network()

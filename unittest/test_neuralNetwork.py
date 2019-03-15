@@ -10,9 +10,9 @@ class TestNeuralNetworkInit(unittest.TestCase):
         test_input = [6,5,4,0.4]
 
         myNeuralNetwork = NeuralNetwork(test_input)
-        self.assertEqual(test_input[0], myNeuralNetwork.get_number_of_inodes())
-        self.assertEqual(test_input[1], myNeuralNetwork.get_number_of_hnodes())
-        self.assertEqual(test_input[2], myNeuralNetwork.get_number_of_onodes())
+        self.assertEqual(test_input[0], myNeuralNetwork.get_number_of_inputnodes())
+        self.assertEqual(test_input[1], myNeuralNetwork.get_number_of_hiddennodes())
+        self.assertEqual(test_input[2], myNeuralNetwork.get_number_of_outputnodes())
         self.assertEqual(test_input[3], myNeuralNetwork.get_learning_rate())
 
     def test_instance_creation_invalid_params(self):
@@ -20,32 +20,32 @@ class TestNeuralNetworkInit(unittest.TestCase):
         test_learning_rate = 0.4
         for ele in test_invalid_input:
             myNeuralNetwork = NeuralNetwork([ele,ele,ele,test_learning_rate])
-            self.assertEqual(None, myNeuralNetwork.get_number_of_inodes())
-            self.assertEqual(None, myNeuralNetwork.get_number_of_hnodes())
-            self.assertEqual(None, myNeuralNetwork.get_number_of_onodes())
+            self.assertEqual(None, myNeuralNetwork.get_number_of_inputnodes())
+            self.assertEqual(None, myNeuralNetwork.get_number_of_hiddennodes())
+            self.assertEqual(None, myNeuralNetwork.get_number_of_outputnodes())
             self.assertEqual(test_learning_rate, myNeuralNetwork.get_learning_rate())
 
     def test_instance_creation_invalid_learning_rate(self):
-        test_inodes = 6
-        test_hnodes = 5
-        test_onodes = 4
+        test_inputnodes = 6
+        test_hiddennodes = 5
+        test_outputnodes = 4
         test_learning_rate = [-1, 0, 1, 3, "-3","3","test"]
         for ele in test_learning_rate:
-            myNeuralNetwork = NeuralNetwork([test_inodes,test_hnodes,test_onodes,ele])
+            myNeuralNetwork = NeuralNetwork([test_inputnodes,test_hiddennodes,test_outputnodes,ele])
             self.assertEqual(None, myNeuralNetwork.get_learning_rate())
 
     def test_create_w_apis(self):
         test_input = [6,5,4,0.4]
         myNeuralNetwork = NeuralNetwork(test_input)
 
-        w_inhn = myNeuralNetwork.init_w_input_hidden()
+        weight_input_hidden = myNeuralNetwork.init_weight_input_hidden()
 
-        for ele in numpy.nditer(w_inhn):
+        for ele in numpy.nditer(weight_input_hidden):
             self.assertTrue(ele >= -0.5 and ele <= 0.5)
 
-        w_hnou = myNeuralNetwork.init_w_hidden_output()
+        weight_hidden_output = myNeuralNetwork.init_weight_hidden_output()
 
-        for ele in numpy.nditer(w_hnou):
+        for ele in numpy.nditer(weight_hidden_output):
             self.assertTrue(ele >= -0.5 and ele <= 0.5, msg="ele={}".format(ele))
 
 
@@ -57,30 +57,30 @@ class TestNeuralNetworkInit(unittest.TestCase):
 
         myNeuralNetwork1 = NeuralNetwork(input)
 
-        test_w_inhd = myNeuralNetwork1.init_w_input_hidden()
+        test_w_inhd = myNeuralNetwork1.init_weight_input_hidden()
         dim_w_inhd = test_w_inhd.shape
         self.assertTrue(dim_hn == dim_w_inhd[0])
         self.assertTrue(dim_in == dim_w_inhd[1])
 
-        test_w_hdou = myNeuralNetwork1.init_w_hidden_output()
+        test_w_hdou = myNeuralNetwork1.init_weight_hidden_output()
         dim_w_hdou = test_w_hdou.shape
         self.assertTrue(dim_ou == dim_w_hdou[0])
         self.assertTrue(dim_hn == dim_w_hdou[1])
 
-        test_v_in = myNeuralNetwork1.init_v_in()
-        dim_v_in = test_v_in.shape
-        self.assertTrue(dim_in == dim_v_in[0])
-        self.assertTrue(1 == dim_v_in[1])
+        test_input_vector = myNeuralNetwork1.init_input_vector()
+        dim_input_vector = test_input_vector.shape
+        self.assertTrue(dim_in == dim_input_vector[0])
+        self.assertTrue(1 == dim_input_vector[1])
 
-        test_v_hn = myNeuralNetwork1.init_v_hn()
-        dim_v_hn = test_v_hn.shape
-        self.assertTrue(dim_hn == dim_v_hn[0])
-        self.assertTrue(1 == dim_v_hn[1])
+        test_hidden_vector = myNeuralNetwork1.init_hidden_vector()
+        dim_hidden_vector = test_hidden_vector.shape
+        self.assertTrue(dim_hn == dim_hidden_vector[0])
+        self.assertTrue(1 == dim_hidden_vector[1])
 
-        test_v_ou = myNeuralNetwork1.init_v_ou()
-        dim_v_ou = test_v_ou.shape
-        self.assertTrue(dim_ou == dim_v_ou[0])
-        self.assertTrue(1 == dim_v_ou[1])
+        test_output_vector = myNeuralNetwork1.init_output_vector()
+        dim_output_vector = test_output_vector.shape
+        self.assertTrue(dim_ou == dim_output_vector[0])
+        self.assertTrue(1 == dim_output_vector[1])
 
         #myNeuralNetwork1.print_current_values("[UNITTEST]:\n")
 
@@ -92,16 +92,16 @@ class TestNeuralNetworkInit(unittest.TestCase):
         myNeuralNetwork.init_neural_network()
 
         # overwrite arrays with book values
-        defaul_v_in_list = [0.9, 0.1, 0.8]
-        default_v_in = numpy.array(defaul_v_in_list).reshape(len(defaul_v_in_list), 1)
-        myNeuralNetwork.set_array(myNeuralNetwork.get_v_in(), default_v_in)
+        defaul_input_vector_list = [0.9, 0.1, 0.8]
+        default_input_vector = numpy.array(defaul_input_vector_list).reshape(len(defaul_input_vector_list), 1)
+        myNeuralNetwork.set_array(myNeuralNetwork.get_input_vector(), default_input_vector)
 
-        default_w_inhn = numpy.array([[0.9, 0.3, 0.4], [0.2, 0.8, 0.2], [0.1, 0.5, 0.6]])
-        myNeuralNetwork.set_array(myNeuralNetwork.get_w_input_hidden(), default_w_inhn)
+        default_weight_input_hidden = numpy.array([[0.9, 0.3, 0.4], [0.2, 0.8, 0.2], [0.1, 0.5, 0.6]])
+        myNeuralNetwork.set_array(myNeuralNetwork.get_weight_input_hidden(), default_weight_input_hidden)
 
 
-        default_w_hnou = numpy.array([[0.3, 0.7, 0.5], [0.6, 0.5, 0.2], [0.8, 0.1, 0.9]])
-        myNeuralNetwork.set_array(myNeuralNetwork.get_w_hidden_output(), default_w_hnou)
+        default_weight_hidden_output = numpy.array([[0.3, 0.7, 0.5], [0.6, 0.5, 0.2], [0.8, 0.1, 0.9]])
+        myNeuralNetwork.set_array(myNeuralNetwork.get_weight_hidden_output(), default_weight_hidden_output)
 
         # Call function under test
         output = myNeuralNetwork.update_neural_network()
@@ -119,9 +119,9 @@ class TestNeuralNetworkInit(unittest.TestCase):
         input = [3, 3, 3, 0.3]
         myNeuralNetwork = NeuralNetwork(input)
 
-        myNeuralNetwork.init_v_in()
-        v_in_tmp = myNeuralNetwork.get_v_in()
-        for ele in v_in_tmp:
+        myNeuralNetwork.init_input_vector()
+        input_vector_tmp = myNeuralNetwork.get_input_vector()
+        for ele in input_vector_tmp:
             self.assertNotEqual(ele, 0.0)
             self.assertNotEqual(ele, 0)
             self.assertNotEqual(ele, None)
@@ -131,9 +131,9 @@ class TestNeuralNetworkInit(unittest.TestCase):
         input = [3, 3, 3, 0.3]
         myNeuralNetwork = NeuralNetwork(input)
 
-        myNeuralNetwork.init_v_hn()
-        v_hn_tmp = myNeuralNetwork.get_v_hn()
-        for ele in v_hn_tmp:
+        myNeuralNetwork.init_hidden_vector()
+        hidden_vector_tmp = myNeuralNetwork.get_hidden_vector()
+        for ele in hidden_vector_tmp:
             self.assertEqual(ele, 0)
             self.assertNotEqual(ele, None)
 
@@ -142,9 +142,9 @@ class TestNeuralNetworkInit(unittest.TestCase):
         input = [3, 3, 3, 0.3]
         myNeuralNetwork = NeuralNetwork(input)
 
-        myNeuralNetwork.init_v_ou()
-        v_ou_tmp = myNeuralNetwork.get_v_ou()
-        for ele in v_ou_tmp:
+        myNeuralNetwork.init_output_vector()
+        output_vector_tmp = myNeuralNetwork.get_output_vector()
+        for ele in output_vector_tmp:
             self.assertEqual(ele, 0)
             self.assertNotEqual(ele, None)
 
