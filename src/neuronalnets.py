@@ -116,7 +116,7 @@ class NeuralNetwork:
         print("{}weight_input_hidden=\n{}\n".format(prefix,self.weight_input_hidden))
         print("{}weight_hidden_output=\n{}\n".format(prefix,self.weight_hidden_output))
 
-if __name__ == "__main__":
+if __name__ == "__main__": # pragma: no cover
     input = [3, 3, 3, 0.3]
     myNeuralNetwork = NeuralNetwork(input)
     myNeuralNetwork.init_neural_network()

@@ -8,7 +8,7 @@ install:
 # command to run tests
 script:
   - cd unittest
-  - python -m coverage run --omit=*/virtualenv/* test_neuralNetwork.py
+  - python -m coverage run --omit=*/virtualenv/* --omit=*/unittest/* test_neuralNetwork.py
 after_success:
   # display coverage results (-m: with missing lines)
   - python -m coverage report
