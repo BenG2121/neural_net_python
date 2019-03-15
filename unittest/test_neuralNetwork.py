@@ -113,5 +113,40 @@ class TestNeuralNetworkInit(unittest.TestCase):
         for n in range(0,expected_output_array.shape[0]):
             for m in range(0,expected_output_array.shape[1]):
                 self.assertTrue(expected_output_array[n,m] == output[n,m],msg="output value is not equal as expected!".format(expected_output,output))
+
+    def test_input_vector_init_and_getter(self):
+        """"Input vector is initialized with random values. Expected values are not 0, not 0.0 and not None"""
+        input = [3, 3, 3, 0.3]
+        myNeuralNetwork = NeuralNetwork(input)
+
+        myNeuralNetwork.init_v_in()
+        v_in_tmp = myNeuralNetwork.get_v_in()
+        for ele in v_in_tmp:
+            self.assertNotEqual(ele, 0.0)
+            self.assertNotEqual(ele, 0)
+            self.assertNotEqual(ele, None)
+
+    def test_hidden_vector_init_and_getter(self):
+        """"Hidden vector is initialized with zeros. Expected values are 0, not None"""
+        input = [3, 3, 3, 0.3]
+        myNeuralNetwork = NeuralNetwork(input)
+
+        myNeuralNetwork.init_v_hn()
+        v_hn_tmp = myNeuralNetwork.get_v_hn()
+        for ele in v_hn_tmp:
+            self.assertEqual(ele, 0)
+            self.assertNotEqual(ele, None)
+
+    def test_output_vector_init_and_getter(self):
+        """"Output vector is initialized with zeros. Expected values are 0, not None"""
+        input = [3, 3, 3, 0.3]
+        myNeuralNetwork = NeuralNetwork(input)
+
+        myNeuralNetwork.init_v_ou()
+        v_ou_tmp = myNeuralNetwork.get_v_ou()
+        for ele in v_ou_tmp:
+            self.assertEqual(ele, 0)
+            self.assertNotEqual(ele, None)
+
 if __name__ == '__main__':
     unittest.main()
