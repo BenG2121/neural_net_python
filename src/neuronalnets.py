@@ -2,6 +2,7 @@ import numpy
 import math
 
 class NeuralNetwork:
+    ROUND_VALUE = 3
     def __init__(self,input_list: list):
         self.activation_function = numpy.vectorize(self.__activation_function)
 
@@ -58,8 +59,6 @@ class NeuralNetwork:
         self.input_vector = numpy.random.rand(self.inputnodes,1)*10
         return self.input_vector
 
-    #weight_input_hidden = hn*in
-    #weight_hidden_output = ou*hn
     def init_weight_input_hidden(self):
         self.weight_input_hidden = numpy.random.rand(self.hiddennodes, self.inputnodes) - 0.5
         return self.weight_input_hidden
@@ -90,12 +89,37 @@ class NeuralNetwork:
         self.init_hidden_vector()
         self.init_output_vector()
 
-    def update_neural_network(self):
-        hidden_in = numpy.around(self.weight_input_hidden.dot(self.input_vector),3)
-        hidden_out = numpy.around(self.activation_function(hidden_in),3)
-        output_in = numpy.around(self.weight_hidden_output.dot(hidden_out),3)
-        output_out = numpy.around(self.activation_function(output_in),3)
+    def update_neural_network(self, _input_list):
+        if type(_input_list) is list:
+            input_list = numpy.array(_input_list, ndmin=2).T
+        else:
+            input_list = _input_list
+
+        hidden_in = numpy.around(self.weight_input_hidden.dot(input_list), self.ROUND_VALUE)
+        hidden_out = numpy.around(self.activation_function(hidden_in), self.ROUND_VALUE)
+        output_in = numpy.around(self.weight_hidden_output.dot(hidden_out), self.ROUND_VALUE)
+        output_out = numpy.around(self.activation_function(output_in), self.ROUND_VALUE)
         return output_out
+
+    def train_network(self, _input_list, _target_lists):
+        target = numpy.array(_input_list, ndmin=2).T
+        inputs = numpy.array(_input_list, ndmin=2).T
+
+        hidden_in = numpy.around(self.weight_input_hidden.dot(inputs),self.ROUND_VALUE)
+        hidden_out = numpy.around(self.activation_function(hidden_in),self.ROUND_VALUE)
+        output_in = numpy.around(self.weight_hidden_output.dot(hidden_out),self.ROUND_VALUE)
+        output_out = numpy.around(self.activation_function(output_in),self.ROUND_VALUE)
+
+        self.error_output_vector = target - output_out
+        self.error_hidden_vector = numpy.dot(self.weight_hidden_output.T, self.error_output_vector)
+
+        self.weight_hidden_output += self.learning_rate * \
+                                     numpy.around(numpy.dot(self.error_output_vector * output_out * (1.0 - output_out),
+                                                            hidden_out.T),self.ROUND_VALUE)
+
+        self.weight_input_hidden += self.learning_rate * \
+                                 numpy.around(numpy.dot(self.error_hidden_vector * hidden_out * (1.0 - hidden_out),
+                                                        inputs.T), self.ROUND_VALUE)
 
     def set_array(self, v1,v2):
         try:
@@ -132,7 +156,7 @@ if __name__ == "__main__": # pragma: no cover
     myNeuralNetwork.set_array(myNeuralNetwork.get_weight_hidden_output(), default_weight_hidden_output)
 
     #myNeuralNetwork.print_current_values("__main__")
-    output = myNeuralNetwork.update_neural_network()
+    output = myNeuralNetwork.update_neural_network(myNeuralNetwork.input_vector)
 
     print(numpy.around(output,3))
 

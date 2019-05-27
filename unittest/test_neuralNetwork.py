@@ -92,8 +92,8 @@ class TestNeuralNetworkInit(unittest.TestCase):
         myNeuralNetwork.init_neural_network()
 
         # overwrite arrays with book values
-        defaul_input_vector_list = [0.9, 0.1, 0.8]
-        default_input_vector = numpy.array(defaul_input_vector_list).reshape(len(defaul_input_vector_list), 1)
+        default_input_vector_list = [0.9, 0.1, 0.8]
+        default_input_vector = numpy.array(default_input_vector_list).reshape(len(default_input_vector_list), 1)
         myNeuralNetwork.set_array(myNeuralNetwork.get_input_vector(), default_input_vector)
 
         default_weight_input_hidden = numpy.array([[0.9, 0.3, 0.4], [0.2, 0.8, 0.2], [0.1, 0.5, 0.6]])
@@ -104,7 +104,7 @@ class TestNeuralNetworkInit(unittest.TestCase):
         myNeuralNetwork.set_array(myNeuralNetwork.get_weight_hidden_output(), default_weight_hidden_output)
 
         # Call function under test
-        output = myNeuralNetwork.update_neural_network()
+        output = myNeuralNetwork.update_neural_network(myNeuralNetwork.input_vector)
 
         # Validate results
         expected_output = [0.726,0.708,0.778]
