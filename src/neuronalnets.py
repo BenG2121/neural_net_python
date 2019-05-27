@@ -89,7 +89,7 @@ class NeuralNetwork:
         self.init_hidden_vector()
         self.init_output_vector()
 
-    def update_neural_network(self, _input_list):
+    def query(self, _input_list):
         if type(_input_list) is list:
             input_list = numpy.array(_input_list, ndmin=2).T
         else:
@@ -156,7 +156,7 @@ if __name__ == "__main__": # pragma: no cover
     myNeuralNetwork.set_array(myNeuralNetwork.get_weight_hidden_output(), default_weight_hidden_output)
 
     #myNeuralNetwork.print_current_values("__main__")
-    output = myNeuralNetwork.update_neural_network(myNeuralNetwork.input_vector)
+    output = myNeuralNetwork.query(myNeuralNetwork.input_vector)
 
     print(numpy.around(output,3))
 

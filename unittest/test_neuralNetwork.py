@@ -104,7 +104,7 @@ class TestNeuralNetworkInit(unittest.TestCase):
         myNeuralNetwork.set_array(myNeuralNetwork.get_weight_hidden_output(), default_weight_hidden_output)
 
         # Call function under test
-        output = myNeuralNetwork.update_neural_network(myNeuralNetwork.input_vector)
+        output = myNeuralNetwork.query(myNeuralNetwork.input_vector)
 
         # Validate results
         expected_output = [0.726,0.708,0.778]
