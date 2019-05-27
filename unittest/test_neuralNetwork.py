@@ -246,8 +246,8 @@ class TestNeuralNetworkInit(unittest.TestCase):
         learning_rate = 0.3
 
         # datasets
-        training_file_name = "../trainings_data/mnist_train_big.csv"
-        test_file_name = "../trainings_data/mnist_test_big.csv"
+        training_file_name = "../trainings_data/mnist_train_60000.csv"
+        test_file_name = "../trainings_data/mnist_test_10000.csv"
 
         # Create and randomly initialize the neural network
         nodes = [input_nodes, hidden_nodes, output_nodes, learning_rate]
