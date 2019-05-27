@@ -2,7 +2,7 @@ import unittest
 import numpy
 import matplotlib.pyplot
 import sys
-
+import time
 sys.path.append('../src')
 from neuronalnets import NeuralNetwork
 
@@ -152,23 +152,116 @@ class TestNeuralNetworkInit(unittest.TestCase):
 
     def test_train_the_network(self):
         score_card = []
+
+        # network configuration
         input_nodes = 784
         hidden_nodes = 100
         output_nodes = 10
         learning_rate = 0.3
 
+        # datasets
         training_file_name = "../trainings_data/mnist_train_100.csv"
         test_file_name = "../trainings_data/mnist_test_10.csv"
 
-
+        # Create and randomly initialize the neural network
         nodes = [input_nodes, hidden_nodes, output_nodes, learning_rate]
         myNetwork = NeuralNetwork(nodes)
         myNetwork.init_neural_network()
 
-        #myNetwork.print_current_values()
-        i = 1
+        # Train the network:
+        # Open the training file. And interpret the data acc. to dateset. One 28x28 character per line. First
+        # data point per line is the label (value of the picture) the remaining data points per line are pixels (28x28)
+        # Iterate over all lines and call train_network function using the "data points [1:]" as input vector and
+        # the label data points [0] as target.
+        i = 0
+        training_start_time = time.time()
         with open(training_file_name, 'r') as training_file:
+            for line in training_file:
+                alldata = line.split(",")
+                scaled_input = (numpy.asfarray(alldata[1:]) / 255 * 0.99) + 0.01
 
+                # image_array = scaled_input.reshape((28,28))
+                # matplotlib.pyplot.imshow(image_array, cmap='Greys',interpolation=None)
+                # matplotlib.pyplot.show()
+
+                target = numpy.zeros(output_nodes) + 0.01
+                target[int(alldata[0])] = 0.99
+
+                # Update the weight matrices acc. to input and target values.
+                myNetwork.train_network(scaled_input, target)
+
+                i += 1
+
+        print(f"netork trained.. {i} training round have been performed")
+        training_end_time = time.time()
+        training_duration = round(training_end_time-training_start_time,2)
+        print(f"it took {training_duration}seconds  to train")
+
+        # Now the network is trained. Identify the performance of the network:
+        # Load test data as during training. Instead of train_network call query which will just calculate the output
+        # vector of using the current (learned) weights.
+        i = 0
+        test_start_time = time.time()
+        with open(test_file_name, 'r') as test_file:
+            for line in test_file:
+                alldata = line.split(",")
+                correct_label = int(alldata[0])
+
+                scaled_input = (numpy.asfarray(alldata[1:]) / 255 * 0.99) + 0.01
+
+                # Ask the network to identify the number
+                result = myNetwork.query(scaled_input)
+
+                # Get the value with the largest confidence
+                label = numpy.argmax(result)
+
+                # Validate network guess vs real value and fill score card.
+                if label == correct_label:
+                    score_card.append(1)
+                else:
+                    score_card.append(0)
+
+                i += 1
+
+        print(f"network tested.. {i} test round have been performed")
+        test_end_time = time.time()
+        test_duration = round(test_end_time-test_start_time,2)
+        print(f"it took {test_duration} seconds  to test the network")
+
+        score_card_array = numpy.asarray(score_card)
+        performance = score_card_array.sum() / score_card_array.size
+        print(f"network performance is {performance}")
+
+        # Network performance cannot be that high due to little trainings data. It's between 0.5 to 0.7
+        self.assertTrue(performance >= 0.5)
+
+
+    def test_train_the_network_big(self):
+        score_card = []
+
+        # network configuration
+        input_nodes = 784
+        hidden_nodes = 100
+        output_nodes = 10
+        learning_rate = 0.3
+
+        # datasets
+        training_file_name = "../trainings_data/mnist_train_big.csv"
+        test_file_name = "../trainings_data/mnist_test_big.csv"
+
+        # Create and randomly initialize the neural network
+        nodes = [input_nodes, hidden_nodes, output_nodes, learning_rate]
+        myNetwork = NeuralNetwork(nodes)
+        myNetwork.init_neural_network()
+
+        # Train the network:
+        # Open the training file. And interpret the data acc. to dateset. One 28x28 character per line. First
+        # data point per line is the label (value of the picture) the remaining data points per line are pixels (28x28)
+        # Iterate over all lines and call train_network function using the "data points [1:]" as input vector and
+        # the label data points [0] as target.
+        i = 0
+        training_start_time = time.time()
+        with open(training_file_name, 'r') as training_file:
             for line in training_file:
 
                 alldata = line.split(",")
@@ -181,13 +274,21 @@ class TestNeuralNetworkInit(unittest.TestCase):
                 target = numpy.zeros(output_nodes) + 0.01
                 target[int(alldata[0])] = 0.99
 
-                print(f"round {i}")
+                #print(f"round {i}")
                 myNetwork.train_network(scaled_input, target)
 
                 i += 1
 
         print(f"netork trained.. {i} training round have been performed")
+        training_end_time = time.time()
+        training_duration = round(training_end_time-training_start_time,2)
+        print(f"it took {training_duration} seconds  to train")
 
+        # Now the network is trained. Identify the performance of the network:
+        # Load test data as during training. Instead of train_network call query which will just calculate the output
+        # vector of using the current (learned) weights.
+        i = 0
+        test_start_time = time.time()
         with open(test_file_name, 'r') as test_file:
             for line in test_file:
                 alldata = line.split(",")
@@ -195,28 +296,31 @@ class TestNeuralNetworkInit(unittest.TestCase):
 
                 scaled_input = (numpy.asfarray(alldata[1:]) / 255 * 0.99) + 0.01
 
+                # Ask the network to identify the number
                 result = myNetwork.query(scaled_input)
-                print(f"networks confidence array {result}")
 
+                # Get the value with the largest confidence
                 label = numpy.argmax(result)
 
-                print(f"Network thinks it\'s a {label} with {result[label]}% confidence")
-
-                print(f"That is {label==correct_label}")
-
+                # Validate network guess vs real value and fill score card.
                 if label==correct_label:
                     score_card.append(1)
                 else:
                     score_card.append(0)
 
-                print(score_card)
-                score_card_array = numpy.asarray(score_card)
-                performance = score_card_array.sum() / score_card_array.size
-                print(f"network performance is {performance}")
+                i += 1
 
-        self.assertTrue(performance > 0.4)
+        print(f"network tested.. {i} test round have been performed")
+        test_end_time = time.time()
+        test_duration = round(test_end_time-test_start_time,2)
+        print(f"it took {test_duration} seconds  to test the network")
 
+        score_card_array = numpy.asarray(score_card)
+        performance = score_card_array.sum() / score_card_array.size
+        print(f"network performance is {performance}")
 
+        # Network performance cannot be that high due to little trainings data. It's between 0.9
+        self.assertTrue(performance > 0.9)
 
 if __name__ == '__main__':
     unittest.main()
