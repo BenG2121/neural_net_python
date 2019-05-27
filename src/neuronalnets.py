@@ -102,7 +102,7 @@ class NeuralNetwork:
         return output_out
 
     def train_network(self, _input_list, _target_lists):
-        target = numpy.array(_input_list, ndmin=2).T
+        target = numpy.array(_target_lists, ndmin=2).T
         inputs = numpy.array(_input_list, ndmin=2).T
 
         hidden_in = numpy.around(self.weight_input_hidden.dot(inputs),self.ROUND_VALUE)
