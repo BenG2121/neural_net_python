@@ -192,10 +192,10 @@ class TestNeuralNetworkInit(unittest.TestCase):
 
                 i += 1
 
-        print(f"netork trained.. {i} training round have been performed")
+        print("netork trained.. {} training round have been performed".format(i))
         training_end_time = time.time()
         training_duration = round(training_end_time-training_start_time,2)
-        print(f"it took {training_duration}seconds  to train")
+        print("it took {}seconds  to train".format(training_duration))
 
         # Now the network is trained. Identify the performance of the network:
         # Load test data as during training. Instead of train_network call query which will just calculate the output
@@ -223,14 +223,14 @@ class TestNeuralNetworkInit(unittest.TestCase):
 
                 i += 1
 
-        print(f"network tested.. {i} test round have been performed")
+        print("network tested.. {} test round have been performed".format(i))
         test_end_time = time.time()
         test_duration = round(test_end_time-test_start_time,2)
-        print(f"it took {test_duration} seconds  to test the network")
+        print("it took {} seconds  to test the network".format(test_duration))
 
         score_card_array = numpy.asarray(score_card)
         performance = score_card_array.sum() / score_card_array.size
-        print(f"network performance is {performance}")
+        print("network performance is {}".format(performance))
 
         # Network performance cannot be that high due to little trainings data. It's between 0.5 to 0.7
         self.assertTrue(performance >= 0.5)
@@ -274,15 +274,14 @@ class TestNeuralNetworkInit(unittest.TestCase):
                 target = numpy.zeros(output_nodes) + 0.01
                 target[int(alldata[0])] = 0.99
 
-                #print(f"round {i}")
                 myNetwork.train_network(scaled_input, target)
 
                 i += 1
 
-        print(f"netork trained.. {i} training round have been performed")
+        print("netork trained.. {} training round have been performed".format(i))
         training_end_time = time.time()
         training_duration = round(training_end_time-training_start_time,2)
-        print(f"it took {training_duration} seconds  to train")
+        print("it took {} seconds  to train".format(training_duration))
 
         # Now the network is trained. Identify the performance of the network:
         # Load test data as during training. Instead of train_network call query which will just calculate the output
@@ -310,14 +309,14 @@ class TestNeuralNetworkInit(unittest.TestCase):
 
                 i += 1
 
-        print(f"network tested.. {i} test round have been performed")
+        print("network tested.. {} test round have been performed".format(i))
         test_end_time = time.time()
         test_duration = round(test_end_time-test_start_time,2)
-        print(f"it took {test_duration} seconds  to test the network")
+        print("it took {} seconds  to test the network".format(test_duration))
 
         score_card_array = numpy.asarray(score_card)
         performance = score_card_array.sum() / score_card_array.size
-        print(f"network performance is {performance}")
+        print("network performance is {}".format(performance))
 
         # Network performance cannot be that high due to little trainings data. It's between 0.9
         self.assertTrue(performance > 0.9)
