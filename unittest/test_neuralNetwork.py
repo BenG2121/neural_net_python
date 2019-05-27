@@ -1,5 +1,6 @@
 import unittest
 import numpy
+import matplotlib.pyplot
 import sys
 
 sys.path.append('../src')
@@ -147,6 +148,75 @@ class TestNeuralNetworkInit(unittest.TestCase):
         for ele in output_vector_tmp:
             self.assertEqual(ele, 0)
             self.assertNotEqual(ele, None)
+
+
+    def test_train_the_network(self):
+        score_card = []
+        input_nodes = 784
+        hidden_nodes = 100
+        output_nodes = 10
+        learning_rate = 0.3
+
+        training_file_name = "../trainings_data/mnist_train_100.csv"
+        test_file_name = "../trainings_data/mnist_test_10.csv"
+
+
+        nodes = [input_nodes, hidden_nodes, output_nodes, learning_rate]
+        myNetwork = NeuralNetwork(nodes)
+        myNetwork.init_neural_network()
+
+        #myNetwork.print_current_values()
+        i = 1
+        with open(training_file_name, 'r') as training_file:
+
+            for line in training_file:
+
+                alldata = line.split(",")
+                scaled_input = (numpy.asfarray(alldata[1:]) / 255 * 0.99) + 0.01
+
+                #image_array = scaled_input.reshape((28,28))
+                #matplotlib.pyplot.imshow(image_array, cmap='Greys',interpolation=None)
+                #matplotlib.pyplot.show()
+
+                target = numpy.zeros(output_nodes) + 0.01
+                target[int(alldata[0])] = 0.99
+
+                print(f"round {i}")
+                myNetwork.train_network(scaled_input, target)
+
+                i += 1
+
+        print(f"netork trained.. {i} training round have been performed")
+
+        with open(test_file_name, 'r') as test_file:
+            for line in test_file:
+                alldata = line.split(",")
+                correct_label = int(alldata[0])
+
+                scaled_input = (numpy.asfarray(alldata[1:]) / 255 * 0.99) + 0.01
+
+                result = myNetwork.query(scaled_input)
+                print(f"networks confidence array {result}")
+
+                label = numpy.argmax(result)
+
+                print(f"Network thinks it\'s a {label} with {result[label]}% confidence")
+
+                print(f"That is {label==correct_label}")
+
+                if label==correct_label:
+                    score_card.append(1)
+                else:
+                    score_card.append(0)
+
+                print(score_card)
+                score_card_array = numpy.asarray(score_card)
+                performance = score_card_array.sum() / score_card_array.size
+                print(f"network performance is {performance}")
+
+        self.assertTrue(performance > 0.4)
+
+
 
 if __name__ == '__main__':
     unittest.main()

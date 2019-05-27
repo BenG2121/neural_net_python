@@ -1,4 +1,5 @@
 # Functionality
 numpy
+matplotlib
 # Testing
 python-coveralls
